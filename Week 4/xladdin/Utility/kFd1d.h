@@ -140,7 +140,7 @@ kFd1d<V>::calcAx(
 	//	dims
 	int n  = myX.size();
 	int m  = myDx.cols();
-	int mm = m/2;
+	int mm = m/2; // middle column
 	
 	//	resize
 	A.resize(n,m);
@@ -159,7 +159,7 @@ kFd1d<V>::calcAx(
 	{
 		if(wind>1)
 		{
-			Dx = myMu(i)<0.0 ? &myDxd : &myDxu;
+			Dx = myMu(i)<0.0 ? &myDxd : &myDxu; // evaluation of if else 
 		}
 		for(j=0;j<m;++j)
 		{
